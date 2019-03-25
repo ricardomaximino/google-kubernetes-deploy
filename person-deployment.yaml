@@ -1,0 +1,26 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: person
+  name: person
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: person
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: person
+    spec:
+      containers:
+      - image: ricardomaximino/person
+        name: person
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}
